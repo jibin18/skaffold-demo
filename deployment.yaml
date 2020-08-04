@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: skaffold-demo
+  name: skaffold-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: skaffold-demo
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: skaffold-demo
+    spec:
+      containers:
+      - image: docker.io/nginx:alpine
+        name: skaffold-demo
+        ports:
+          - containerPort: 80
+        resources: {}
+status: {}

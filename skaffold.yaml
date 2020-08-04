@@ -1,0 +1,12 @@
+apiVersion: skaffold/v2beta5
+kind: Config
+metadata:
+  name: skaffold-demo
+build:
+  artifacts:
+  - image: docker.io/nginx
+deploy:
+  kubectl:
+    manifests:
+    - deployment.yaml
+    - service.yaml
